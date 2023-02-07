@@ -10,9 +10,9 @@ app.use(cors({
 }));
 
 const con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: 'keshroot-unitdb.crcodkqyjkbx.ap-south-1.rds.amazonaws.com',
+    user: 'keshroot',
+    password: 'KeshRoot#2023',
     database: 'keshroot',
 })
 
@@ -109,6 +109,14 @@ app.get('/home', async (req, res) => {
 
         res.type('application/json');
         res.send(JSON.stringify(data));
+    });
+});
+
+app.get('/demo', (req, res) => {
+    con.query('select * from home', async (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(JSON.stringify(result));
     });
 })
 
