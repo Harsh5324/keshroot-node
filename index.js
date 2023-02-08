@@ -54,8 +54,6 @@ app.get('/home', async (req, res) => {
 
     con.query('select * from home', async (err, result) => {
         if (err) throw err;
-        console.log(result);
-
         // slider
         result.forEach(item => {
             if (item.sectionId === 1) {
@@ -115,7 +113,7 @@ app.get('/home', async (req, res) => {
 app.get('/demo', (req, res) => {
     con.query('select * from home', async (err, result) => {
         if (err) throw err;
-        console.log(result);
+        res.type('application/json');
         res.send(JSON.stringify(result));
     });
 })
