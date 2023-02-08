@@ -11,6 +11,6 @@
   },
   "scripts": {
     "start": "npx pm2 start index.js",
-    "stop": "npx pm2 stop index.js",
+    "stop": "npx pm2 stop index.js"
   }
 }
