@@ -53,7 +53,13 @@ app.get('/home', async (req, res) => {
     };
 
     con.query('select * from home', async (err, result) => {
-        if (err) throw err;
+        if (err) {
+            res.type('application/json');
+            res.send(JSON.stringify({
+                status: 500,
+                error: 'Database connection error',
+            }))
+        };
         // slider
         result.forEach(item => {
             if (item.sectionId === 1) {
