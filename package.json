@@ -2,7 +2,7 @@
   "name": "keshroot",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "harsh patel",
+  "author": "Harsh Patel",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
@@ -10,7 +10,7 @@
     "mysql": "^2.18.1"
   },
   "scripts": {
-    "start": "npx nodemon start",
-    "http": "npx ngrok http 8000"
+    "start": "npx pm2 start index.js",
+    "stop": "npx pm2 stop index.js",
   }
 }
